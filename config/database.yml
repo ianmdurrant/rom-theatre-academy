@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: rom_theatre_academy_development
+
+test:
+  <<: *default
+  database: rom_theatre_academy_test
+
+production:
+  <<: *default
+  database: rom_theatre_academy_production
+  username: rom_theatre_academy
+  password: <%= ENV['ROM_THEATRE_ACADEMY_DATABASE_PASSWORD'] %>

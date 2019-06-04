@@ -1,0 +1,12 @@
+<div class="cell projectitem <%= project&.project_category.name %>">
+  <a href="<%= spina.project_path(project) %>">
+    <div class="media-object" style="background-image: url('<%= main_app.url_for(project.image.variant(resize: "800x400")) %>')">
+
+    </div>
+  </a>
+  <br>
+  <p class="project-meta">Case study | <%= project&.project_category.name %></p>
+  <h2 class="h4">
+    <%= link_to project.title, spina.project_path(project) %>
+  </h2>
+</div>

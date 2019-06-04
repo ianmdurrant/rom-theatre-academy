@@ -1,0 +1,35 @@
+<%= content_for :page_title, @page.seo_title %>
+<%= content_for :page_description, @page.description %>
+<%= content_for :body_classes, "projects-page" %>
+
+
+
+
+<div class="banner solid">
+  <div class="banner__content">
+    <div class="grid-container">
+      <div class="grid-x">
+        <div class="cell large-4">
+          <div class="pagemarker">
+            PROJECTS
+          </div>
+        </div>
+        <div class="cell large-8 filter-menu">
+          <ul>
+            <li class="projectlink active" data-filter="all">ALL PROJECTS</li>
+            <li class="projectlink" data-filter="Commercial">COMMERCIAL</li>
+            <li class="projectlink" data-filter="Residential">RESIDENTIAL</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content nopadding">
+  <div class="grid-container">
+    <div class="grid-x medium-up-2 grid-padding-y">
+      <%= render @projects %>
+    </div>
+  </div>
+</div>

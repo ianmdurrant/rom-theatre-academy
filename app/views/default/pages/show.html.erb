@@ -1,0 +1,22 @@
+<%= content_for :page_title, @page.seo_title %>
+<%= content_for :page_description, @page.description %>
+<%= content_for :body_classes, "show-page" %>
+
+<div class="content" style="padding-top: 180px;">
+  <div class="grid-container">
+    <div class="grid-x">
+      <div class="cell large-2">
+        <div class="pagemarker">
+          01
+        </div>
+      </div>
+      <div class="cell large-6">
+        <%= content(:banner_title).try(:html_safe) %>
+        <%= content(:text).try(:html_safe) %>
+      </div>
+      <div class="cell large-2">
+
+      </div>
+    </div>
+  </div>
+</div>

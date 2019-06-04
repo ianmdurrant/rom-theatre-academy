@@ -1,0 +1,100 @@
+<%= content_for :page_title, @page.seo_title %>
+<%= content_for :page_description, @page.description %>
+<%= content_for :body_classes, "about-page" %>
+
+<div class="content nopadding toppadding">
+  <div class="grid-container">
+    <div class="grid-x">
+
+      <div class="cell large-6">
+        <div class="banner inner-banner">
+          <div class="banner__content">
+            <div class="cell large-6">
+              <p><%= content(:text).try(:html_safe) %></p>
+              <a href="/services" class="button">Explore our services</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cell large-6">
+        <div class="banner inner-banner" style="background-image: url('<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>');">
+          <div class="banner__content text-center">
+            <div class="cell large-6 about-logo">
+              <%= link_to (image_pack_tag 'logo-full.svg'), '/about' %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="grid-container">
+    <div class="grid-x">
+      <div class="cell large-12 reasons">
+        <h2>Reasons<br /><em>to choose us</em></h2>
+      </div>
+      <div class="cell medium-4 large-4 grid-x align-middle">
+        <div class="cell medium-3 text-center reason-icon">
+          <%= link_to (image_pack_tag '8.svg'), '/about' %>
+        </div><div class="cell medium-9 reason-text">
+          <h3><em>We have been catering</em><br />for 8 years</h3>
+        </div>
+      </div>
+      <div class="cell medium-4 large-4 grid-x align-middle">
+        <div class="cell medium-3 text-center reason-icon">
+          <%= link_to (image_pack_tag 'path.svg'), '/about' %>
+        </div><div class="cell medium-9 reason-text">
+          <h3><em>Our food is</em><br />locally sourced</h3>
+        </div>
+      </div>
+      <div class="cell medium-4 large-4 grid-x align-middle">
+        <div class="cell medium-3 text-center reason-icon">
+          <%= link_to (image_pack_tag 'confetti.svg'), '/about' %>
+        </div><div class="cell medium-9 reason-text">
+          <h3><em>We cater for all events</em><br />big &amp; small</h3>
+        </div>
+      </div>
+      <div class="cell large-12">
+        &nbsp;
+      </div>
+      <div class="cell medium-4 large-4 grid-x align-middle">
+        <div class="cell medium-3 text-center reason-icon">
+          <%= link_to (image_pack_tag 'route.svg'), '/about' %>
+        </div><div class="cell medium-9 reason-text">
+          <h3><em>Our services are</em><br />fully flexible</h3>
+        </div>
+      </div>
+      <div class="cell medium-4 large-4 grid-x align-middle">
+        <div class="cell medium-3 text-center reason-icon">
+          <%= link_to (image_pack_tag 'certificate.svg'), '/about' %>
+        </div><div class="cell medium-9 reason-text">
+          <h3><em>We have fully trained</em><br />professional staff</h3>
+        </div>
+      </div>
+      <div class="cell medium-4 large-4 grid-x align-middle">
+        <div class="cell medium-3 text-center reason-icon">
+          <%= link_to (image_pack_tag 'events.svg'), '/about' %>
+        </div><div class="cell medium-9 reason-text">
+          <h3><em>People love our</em><br />great service</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content testimonials" style="background-image: url('/packs/media/images/party-setting-c2010acb0c58109e1703b2ad161ecc94.jpg');">
+  <div class="grid-container">
+    <div class="grid-x">
+
+      <div class="cell large-8 large-offset-2 text-center">
+        <h3>READY TO MAKE A BOOKING?</h3>
+        <a href="/contact" class="button trans">Get your free quote today</a>
+      </div>
+
+    </div>
+  </div>
+</div>

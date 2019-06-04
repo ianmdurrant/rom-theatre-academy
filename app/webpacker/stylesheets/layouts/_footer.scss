@@ -1,0 +1,105 @@
+.footer {
+  background-color: $black;
+  color: $white;
+  padding: 2rem 0 1rem;
+
+  .cell {
+
+    @include breakpoint(small down) {
+      text-align: center;
+    }
+
+    img {
+
+      @include breakpoint(small down) {
+        max-width: 30%;
+      }
+    }
+  }
+
+  .callus h3 {
+    font-size: rem-calc(44px);
+    line-height: rem-calc(38px);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .callus h3 em {
+    font-size: 80%;
+    font-style: normal;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  .contactdetails h4 {
+    font-family: "Barlow", Helvetica, Arial, Roboto, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    line-height: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+  }
+
+  a {
+    color: $white;
+    transition: color 0.25s ease-out;
+  }
+
+  a.underline {
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: $medium-gray;
+  }
+
+  &__title {
+    color: $white;
+  }
+
+  &__menu {
+
+    a {
+      color: $black;
+      font-size: 1.25rem;
+      font-weight: 500;
+      padding: 0.5rem 0;
+    }
+  }
+
+  &__social {
+    li a {
+      padding: 0rem 1rem 1rem 0;
+    }
+
+    li:last-child a {
+      padding: 0rem 0rem 1rem 0;
+    }
+
+    img {
+      width: 24px;
+
+      @include breakpoint(small only) {
+        width: 55px;
+      }
+    }
+  }
+  .contactdetails {
+
+    p,
+    ul {
+      display: inline-block;
+      padding-top: 0.5rem;
+      border-top: 1px solid $white;
+    }
+    ul li {
+      display: inline-block;
+    }
+  }
+}

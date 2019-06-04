@@ -1,0 +1,116 @@
+<%= content_for :page_title, @project.title %>
+<%= content_for :page_description, @project.description %>
+<%= content_for :body_classes, "project-page" %>
+
+<div class="content" style="padding-top: 180px;">
+  <div class="grid-container">
+    <div class="grid-x">
+      <div class="cell small-2">
+        <div class="pagemarker">
+          01
+        </div>
+      </div>
+      <div class="cell small-8">
+        <p class="h5" style="text-transform: uppercase; font-weight: 600;"><%= @project&.project_category.name %></p>
+        <h2 class="h2"><%= @project.title %></h2>
+        <%= @project.description.html_safe %>
+      </div>
+      <div class="cell small-2">
+        <%= link_to 'ALL PROJECTS', spina.projects_path %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content nopadding">
+  <div class="banner" style="background-image: url(<%= main_app.url_for(@project.image.variant(resize: "1280x720")) if @project.image.present? %>);">
+  </div>
+</div>
+
+<div class="content">
+  <div class="grid-container">
+    <div class="grid-x">
+      <div class="cell large-2">
+        <div class="pagemarker">
+          02
+        </div>
+      </div>
+      <div class="cell large-10">
+        <h5>WHAT PEOPLE SAY ABOUT US</h5>
+        <div class="testimonial-carousel">
+          <blockquote class="testimonial">
+            <%= @project.testimonial %>
+            <cite class="author"><%= @project.testimonial_name %></cite>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content nopadding">
+  <div class="grid-container">
+    <div class="grid-x align-center-middle text-center">
+        <% @project.image_collection.images.each do |image| %>
+          <div class="project_image" style="background-image: url(<%= main_app.url_for(image.variant(resize: "1280x720"))%>);">
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="grid-container">
+    <div class="grid-x">
+      <div class="cell small-2">
+        <div class="pagemarker">
+          03
+        </div>
+      </div>
+      <div class="cell small-8">
+        <p class="h5" style="text-transform: uppercase; font-weight: 600;">OUR SOLUTIONS</p>
+        <p>For the past 35 years MJH Events Ltd has specialised in the supply and installation of new and refurbished ten pin bowling equipment. Working with architects, designers and the clients visions to build a leisure facility that has rewarded them with a return on investment in just over a few years.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content nopadding">
+  <div class="grid-container">
+    <div class="grid-x">
+      <div class="cell small-2">
+
+      </div>
+      <div class="cell small-4">
+        <p class="h3">Have a project in mind?</p>
+      </div>
+      <div class="cell small-4 contactbutton" style="text-align:right;">
+        <%= link_to 'CONTACT US', '/contact-us', :class => "button fullborder" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content nopadding">
+  <div class="grid-container">
+    <div class="grid-x">
+
+      <% @related_projects.each do |project| %>
+
+        <div class="cell large-6 case-study" style="background-image: url('<%= main_app.url_for(project.image.variant(resize: "800x400")) %>'); padding: 3rem;">
+          <div class="casestudycardtext">
+            <p class="project-meta">Case study | <%= project&.project_category.name %></p>
+            <h2 class="h3">
+              <%= link_to project.title, spina.project_path(project) %>
+            </h2>
+          </div>
+          <div class="casestudycardbutton align-self-bottom">
+            <%= link_to 'VIEW PROJECT', spina.project_path(project), :class => "button" %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

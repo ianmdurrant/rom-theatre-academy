@@ -1,0 +1,33 @@
+<% footer_menu = Spina::Navigation.find_by(name: 'footer_menu') %>
+
+<footer class="footer">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x grid-padding-y align-middle">
+      <div class="cell medium-6 callus">
+        <h3>LOCAL CATERING<br /><em>FOR HOG ROAST &amp; BBQ</em></h3>
+        <p><a href="/contact" class="button wide">Call us today</a></p>
+      </div>
+      <div class="cell medium-4 contactdetails">
+        <h4>CONTACT US</h4>
+        <div>
+          <p><a href="tel:<%= current_account.phone %>">T: <%= current_account.phone %></a><br />
+            <a href="tel:+447891382420">M: 07891 382420</a><br />
+          <a href="mailto:<%= current_account.email %>"><%= current_account.email %></a></p>
+        </div>
+        <div class="grid-x grid-padding-x grid-padding-y">
+          <div class="cell large-5">
+
+          </div>
+          <div class="cell large-5">
+
+          </div>
+        </div>
+      </div>
+      <div class="cell medium-2 text-right">
+        <%= link_to (image_pack_tag 'logo-full.svg'), spina.root_path %><br /><br />
+        <p><%= link_to 'Terms & Conditions', '/terms' %><br />&copy;<%= Time.now.year %> <%= current_account.name %><br /><%= link_to 'Website by Digital Reflow', 'https://www.digitalreflow.co.uk' %></p>
+      </div>
+    </div>
+  </div>
+
+</footer>
