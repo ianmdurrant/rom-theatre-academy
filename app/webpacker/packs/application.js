@@ -21,6 +21,7 @@ import 'images/facebook-white.svg';
 import 'images/instagram-white.svg';
 import 'images/twitter-white.svg';
 import 'images/logo-full.svg';
+import 'images/banner-logo.svg';
 import 'images/logo.svg';
 
 

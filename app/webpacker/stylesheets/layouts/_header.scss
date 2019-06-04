@@ -1,11 +1,10 @@
 .header {
-  position: fixed;
+  position: static;
   top: 0;
   width: 100%;
   z-index: 99;
 
   &__main {
-    background-color: $black;
     padding: 1rem 0;
 
     @include breakpoint(small down) {
@@ -16,19 +15,15 @@
       text-align: left;
 
       @include breakpoint(medium down) {
-        height: 60px;
+        height: 40px;
       }
     }
   }
 
   &__logo {
     display: flex;
-    margin-left: 1rem;
+    margin-left: 1.5rem;
     padding-right: 1.5rem;
-
-    @include breakpoint(small down) {
-      margin-left: 0;
-    }
 
     .first {
       background-color: rgba(26,26,24,0);
@@ -37,7 +32,7 @@
       background-position: center;
       background-size: 60px;
       display: flex;
-      height: 60px;
+      height: 40px;
       padding: 1rem;
       width: 60px;
     }
@@ -49,7 +44,7 @@
       background-position: left center;
       background-size: contain;
       display: flex;
-      height: 60px;
+      height: 40px;
       padding: 0;
       text-indent: -9999px;
       width: 185px;
@@ -66,100 +61,16 @@
   }
 
   .menu a {
-    color: $primary-color;
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.1rem;
     padding: 0;
-    text-transform: uppercase;
-    transition: color 0.25s ease-out;
-
-    @include breakpoint(medium down) {
-      display: none;
-    }
-
-    &.button {
-      font-weight: $global-weight-bold;
-
-      &:after {
-        display: none;
-      }
-    }
-  }
-
-  .menu li {
-    border-left: 1px solid $medium-gray;
-    padding: 0 1.5rem;
-    &:first-child {
-      border-left: none;
-    }
-  }
-
-  .menu li.active a {
-    color: $medium-gray;
-  }
-
-  .menu li:hover a {
-    color: $medium-gray;
-  }
-
-  .menu li.active a ul.submenu li a {
-    color: $white;
   }
 }
-
-.menu-telephone {
-  background-image: url("");
-  background-size: 22px;
-  background-position: left 1rem center;
-  background-repeat: no-repeat;
-  color: $secondary-color;
-  display: block;
-  font-weight: $global-weight-bold;
-  padding: 0.5rem 1rem 0.5rem 3rem;
-
-  @include breakpoint(small down) {
-    display: none;
-  }
-
-  &__title {
-    display: block;
-    font-size: rem-calc(16px);
-    line-height: 1;
-  }
-
-  &__number {
-    display: block;
-    font-size: rem-calc(18px);
-    line-height: 1;
-  }
-}
-
-.top-bar .top-bar-right {
-
-    .teleno {
-      color: $white;
-      line-height: 20px;
-
-      @include breakpoint(medium down) {
-        display: none;
-      }
-    }
-
-    .teleno a {
-      color: $white;
-      line-height: 20px;
-      padding: 0;
-      text-transform: none;
-    }
-  }
 
 .offcanvas-menu-link {
   background-color: $black;
   display: flex;
   height: 60px;
   line-height: 60px;
-  padding: 20px;
+  padding: 22px 20px;
   width: 60px;
 
   &__text {
@@ -189,10 +100,6 @@
     li.active a {
       color: $medium-gray;
       background: none;
-    }
-
-    .menu {
-      padding-left: 1.5rem;
     }
   }
 
@@ -231,35 +138,6 @@
   }
 }
 
-ul.submenu {
-  background-color: $black !important;
-}
-
-.is-dropdown-submenu {
-  padding: 0.75rem 1.25rem;
-  position: absolute;
-  top: 1rem;
-  left: 0 !important;
-
-  li {
-    border-left: none !important;
-    padding: 0.25rem !important;
-  }
-
-  li.is-submenu-item a {
-    color: $white !important;
-  }
-
-  li:hover a {
-    text-decoration: underline;
-  }
-}
-
 .off-canvas {
     background: $black !important;
   }
-
-.off-canvas-content.is-open-right {
-  position: relative;
-  top: calc(-60px + -2rem);
-}

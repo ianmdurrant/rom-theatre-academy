@@ -8,8 +8,12 @@
     @include breakpoint(small down) {
       text-align: center;
     }
+  }
+
+  .footer-logo {
 
     img {
+      max-width: 240px;
 
       @include breakpoint(small down) {
         max-width: 30%;
@@ -31,17 +35,21 @@
     text-transform: uppercase;
   }
 
-  .contactdetails h4 {
-    font-family: "Barlow", Helvetica, Arial, Roboto, sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
+  h4 {
+    font-weight: 700;
     letter-spacing: 0.05rem;
     line-height: 1.4rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   p {
     font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+  }
+
+  p.contactdetails {
+    font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.05rem;
   }
@@ -74,6 +82,12 @@
   }
 
   &__social {
+    justify-content: flex-end;
+
+    @include breakpoint(small only) {
+      justify-content: center;
+    }
+
     li a {
       padding: 0rem 1rem 1rem 0;
     }
@@ -83,23 +97,7 @@
     }
 
     img {
-      width: 24px;
-
-      @include breakpoint(small only) {
-        width: 55px;
-      }
-    }
-  }
-  .contactdetails {
-
-    p,
-    ul {
-      display: inline-block;
-      padding-top: 0.5rem;
-      border-top: 1px solid $white;
-    }
-    ul li {
-      display: inline-block;
+        width: 24px;
     }
   }
 }

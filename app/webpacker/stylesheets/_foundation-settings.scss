@@ -70,12 +70,12 @@ $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #FFFFFF,
-  secondary: #111111,
+  secondary: #e4172b,
   success: #6cc490,
   warning: #ffae00,
   alert: #d41f25
 );
-$light-gray: #ecefee;
+$light-gray: #efecee;
 $medium-gray: #777777;
 $dark-gray: #1e1e1e;
 $black: #111111;
@@ -130,7 +130,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: "Barlow Condensed", sans-serif;
+$header-font-family: "Barlow", sans-serif;
 $header-font-weight: 300;
 $header-font-style: normal;
 $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
