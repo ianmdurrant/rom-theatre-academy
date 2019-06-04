@@ -13,7 +13,7 @@
   .footer-logo {
 
     img {
-      max-width: 240px;
+      max-width: 200px;
 
       @include breakpoint(small down) {
         max-width: 30%;
@@ -44,12 +44,12 @@
 
   p {
     font-size: 0.8rem;
-    font-weight: 500;
+    font-weight: 300;
     letter-spacing: 0.05rem;
   }
 
   p.contactdetails {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
     letter-spacing: 0.05rem;
   }

@@ -23,6 +23,8 @@ import 'images/twitter-white.svg';
 import 'images/logo-full.svg';
 import 'images/banner-logo.svg';
 import 'images/logo.svg';
+import 'images/arrow-right.svg';
+import 'images/arrow-left.svg';
 
 
 Rails.start();
@@ -63,7 +65,9 @@ $(document).on("turbolinks:load", function() {
       $('#testimonialCarousel').owlCarousel({
         autoplay: true,
         autoplayHoverPause: true,
-        dots: true,
+        dots: false,
+        nav: true,
+        navText: ['&nbsp;', '&nbsp;'],
         items: 1,
         loop: true,
         margin: 0,

@@ -24,11 +24,12 @@
       box-shadow: 0;
       color: $black;
       font-weight: 600;
+      padding: 0.5rem 2rem;
       text-transform: uppercase;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      padding-left: 1rem;
-      padding-right: 80%;
+
+      &:hover {
+        cursor: pointer;
+      }
 
     }
     input[type="submit"]:hover {

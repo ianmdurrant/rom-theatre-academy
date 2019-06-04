@@ -63,38 +63,34 @@
   }
 
   &__content {
-    @include vertical-center;
     position: relative;
+    top: 100%;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
     z-index: 10;
 
-    @include breakpoint(medium down) {
+    @include breakpoint(small down) {
       .home-page & {
         @include vertical-center;
         text-align: center;
         width: 100%;
       }
+    }
 
-      .services-page & {
-        @include vertical-center;
-        width: 100%;
-      }
-
-      .about-page & {
-        @include vertical-center;
-        width: 100%;
-      }
+    .banner-logo {
+      padding-top: 5rem;
     }
 
     h1,
     h2 {
       @include breakpoint(large) {
         font-size: rem-calc(100px);
-        line-height: rem-calc(75px);
+        line-height: rem-calc(88px);
       }
 
       @include breakpoint(medium) {
         font-size: rem-calc(80px);
-        line-height: rem-calc(64px);
+        line-height: rem-calc(72px);
       }
 
       @include breakpoint(small) {
@@ -104,92 +100,27 @@
     }
 
     h2 {
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    h3 {
-      font-size: rem-calc(64px);
-      line-height: rem-calc(56px);
-      font-weight: 600;
-      text-transform: uppercase;
-
-      @include breakpoint(small down) {
-        font-size: rem-calc(48px);
-        line-height: rem-calc(36px);
-      }
-    }
-
-    h4 {
-      font-size: rem-calc(48px);
-      line-height: rem-calc(48px);
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    h2 em,
-    h3 em {
-      font-size: 70%;
-      font-style: normal;
-      font-weight: 300;
-      text-transform: uppercase;
-    }
-    h4 em {
-      font-style: normal;
-      font-weight: 300;
+      font-weight: 400;
       text-transform: uppercase;
     }
   }
 }
 
-.banner--small {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: $black;
-  color: $white;
-  height: 480px;
-  padding: 3rem 0;
-  position: relative;
-  transition: background-color 0.25s ease-out;
+.underbanner {
+  background-color: $white;
+  color: $black;
+  padding: 0.5rem 0 !important;
+  text-transform: uppercase;
 
-  &:before {
-    background: rgba($black, 0.66);
-    bottom: 0;
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: background-color 0.25s ease-out;
-    width: 100%;
-    z-index: 5;
+  p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    line-height: 2.2rem;
+    margin: 0;
   }
 
-  @include breakpoint(small) {
-    height: 280px;
+  .button {
+    margin-left: 1.5rem;
   }
-
-  @include breakpoint(large) {
-    height: 280px;
-  }
-
-  @include breakpoint(xlarge) {
-    height: 320px;
-  }
-}
-
-.downarrow {
-  border: solid $white;
-  border-width: 0 3px 3px 0;
-  bottom: 2rem;
-  display: inline-block;
-  font-weight: 300;
-  left: calc(50% - 20px);
-  padding: 18px;
-  position: absolute;
-  transform: rotate(45deg);
-  z-index: 7;
 }

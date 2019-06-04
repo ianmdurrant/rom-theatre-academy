@@ -17,7 +17,7 @@
   theme.view_templates = [{
     name: 'homepage',
     title: 'Homepage',
-    page_parts: ['banner', 'banner_title', 'text', 'testimonials']
+    page_parts: ['banner', 'banner_title', 'text', 'image_collection']
   }, {
     name: 'show',
     title: 'Default',

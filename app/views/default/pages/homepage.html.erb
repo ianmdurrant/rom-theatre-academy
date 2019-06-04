@@ -3,195 +3,141 @@
 <%= content_for :body_classes, "home-page" %>
 
 <div class="banner" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
-  <div class="banner__content">
-    <div class="grid-container">
+  <div class="banner__content grid-container">
       <div class="grid-x">
-        <div class="cell large-8">
+        <div class="cell medium-4 banner-logo">
+          <%= link_to (image_pack_tag 'logo-full.svg'), '/about', :class => 'logoimage' %>
+        </div>
+        <div class="cell medium-8 text-right">
           <%= content(:banner_title).try(:html_safe) %>
-          <a href="/services" class="button black">Find out more</a>
         </div>
       </div>
-    </div>
   </div>
-  <div class="downarrow text-center"></div>
 </div>
 
-<div class="content nopadding">
+<div class="content fullwidth underbanner">
   <div class="grid-container">
-    <div class="grid-x">
-
-      <div class="cell large-6">
-        <div class="banner inner-banner">
-          <div class="banner__content">
-            <div class="cell large-6">
-              <h3><em>A RANGE OF OPTIONS TO</em><br />SUIT YOUR NEEDS</h3>
-              <p><%= content(:text).try(:html_safe) %></p>
-              <a href="/services" class="button">Explore our services</a>
-            </div>
-          </div>
-        </div>
+    <div class="grid-x align-center">
+      <div class="cell large-10 text-center">
+        <p>Join our world leading course today <a href="/contact" class="button black">Apply now</a></p>
       </div>
-
-      <div class="cell large-6">
-        <div class="banner--small inner-banner" style="background-image: url('')">
-          <div class="banner__content">
-            <div class="cell large-6">
-              <h4>SAVOURY<br /><em>HOG ROAST</em></h4>
-              <div class="banner-text">
-                <a href="services/hog-roast" class="button trans">View our menu</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="banner--small inner-banner" style="background-image: url('');">
-          <div class="banner__content">
-            <div class="cell large-6">
-              <h4>CLASSIC<br /><em>BBQ & GRILL</em></h4>
-              <div class="banner-text">
-                <a href="services/classic-bbq" class="button trans">View our menu</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>
 
 <div class="content nopadding">
   <div class="grid-container">
-    <div class="grid-x">
-
-      <div class="cell large-6">
-        <div class="banner inner-banner">
-          <div class="banner__content eventicons">
-            <div class="grid-x grid-margin-x align-center text-center">
-              
-            </div>
+    <div class="grid-x align-middle">
+      <div class="cell large-6 grid-x">
+        <div class="cell large-10">
+          <h2>Our course<br /><strong>prepares you</strong></h2>
+          <p><%= content(:text).try(:html_safe) %></p>
+          <a href="/course" class="button">View our course</a>
+        </div>
+      </div>
+      <div class="cell large-6 grid-y">
+        <div class="cell large-6 inner-banner grid-x align-center" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
+          <div class="cell large-9 text-right">
+            <h3>We <strong>sing</strong></h3>
+          </div>
+        </div>
+        <div class="cell large-6 inner-banner grid-x align-center" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
+          <div class="cell large-9 text-right">
+            <h3>We <strong>dance</strong></h3>
+          </div>
+        </div>
+        <div class="cell large-6 inner-banner grid-x align-center" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
+          <div class="cell large-9 text-right">
+            <h3>We <strong>act</strong></h3>
           </div>
         </div>
       </div>
-
-      <div class="cell large-6">
-        <div class="banner inner-banner">
-          <div class="banner__content text-right">
-            <div class="cell large-6">
-              <h3><em>WE CATER FOR ALL EVENTS</em><br />BIG &amp; SMALL</h3>
-              <p>Whether you need catering for a wedding, birthday, anniversary or any other special occasion, we are available to give your guests great food with fantastic customer service.</p>
-              <a href="/contact" class="button">Get a free quote today</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>
 
-<div class="content nopadding">
+<div class="content testimonials">
   <div class="grid-container">
     <div class="grid-x">
-
-      <div class="cell large-6">
-        <div class="banner inner-banner">
-          <div class="banner__content">
-            <div class="cell large-6">
-              <h3><em>CATERING IS OUR</em><br />BREAD &amp; BUTTER</h3>
-              <p>We have been catering for a long time, so we know how to make your catering experience with us extra special.</p>
-              <p>You can have confidence that we can provide you top quality catering for your event.</p>
-              <a href="/about" class="button">Why choose us?</a>
-            </div>
-          </div>
-        </div>
+      <div class="cell large-12">
+        <h3>We are recognised<br /><strong>by industry</strong></h3>
       </div>
-
-      <div class="cell large-6">
-        <div class="banner inner-banner" style="background-image: url('');">
-          <div class="banner__content text-center">
-            <div class="cell large-6">
-              <%= link_to (image_pack_tag 'logo-full.svg'), '/about', :class => 'logoimage' %>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="content testimonials" style="background-image: url('');">
-  <div class="grid-container">
-    <div class="grid-x">
-
-      <div class="cell large-8 large-offset-2 text-center">
-        <h3>TESTIMONIALS</h3>
+      <div class="cell large-12 text-center">
 
         <div id="testimonialCarousel" class="owl-carousel testimonial-carousel">
-          <% @page.content(:testimonials).structure_items.sorted_by_structure.each do |testimonials| %>
-            <blockquote class="testimonial">
-              <%= testimonials.content(:testimonial).try(:html_safe) %>
-              <cite class="author"><%= testimonials.content(:author) %></cite>
-            </blockquote>
-          <% end %>
+            <% content(:image_collection)&.images&.each do |image| %>
+              <div class="testimonial" style="background-image: url(<%= main_app.url_for(image.variant(resize: "1200x400")) %>);">
+                &nbsp;
+              </div>
+            <% end %>
         </div>
 
       </div>
-
+      <div class="cell medium-6 accreditation">
+        Accreditation text
+      </div>
+      <div class="cell medium-2 accreditation">
+        logo
+      </div>
+      <div class="cell medium-2 accreditation">
+        logo
+      </div>
+      <div class="cell medium-2 accreditation">
+        logo
+      </div>
     </div>
   </div>
 </div>
 
-<div class="content nopadding">
+<div class="content">
   <div class="grid-container">
     <div class="grid-x">
-
-      <div class="cell large-6">
-        <div class="banner inner-banner">
-          <div class="banner__content">
-            <div class="cell large-6">
-              <h3><em>WANT TO ASK US</em><br />A QUESTION?</h3>
-              <p>Got a question about our service you want to ask us about?<br />Fill in our contact form and we'll aim to respond to you within 24 hours.</p>
-
-            </div>
-          </div>
-        </div>
+      <div class="cell large-12">
+        <h3>Our inspiring<br /><strong>patrons</strong></h3>
       </div>
-
-      <div class="cell large-6">
-        <div class="banner inner-banner">
-          <div class="banner__content text-center">
-            <div class="cell large-6">
-              <%= simple_form_for Spina::Inquiry.new, url: '/contact', html: { autocomplete: 'off' } do |f| %>
-                <%= f.invisible_captcha :spam %>
-                <%= f.input :name, placeholder:'Your name', label: false %>
-                <%= f.input :email, placeholder: 'Your e-mail', label: false %>
-                <%= f.input :phone, placeholder: 'Your contact number', label: false %>
-                <%= f.input :message, input_html: { rows: 4 }, placeholder: 'Inquiry', label: false %>
-                <div class="text-left">
-                  <div class="button submit">
-                    <%= f.submit "Send" %>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        </div>
+      <div class="cell medium-3 text-center">
+        patron
       </div>
-
+      <div class="cell medium-3 text-center">
+        patron
+      </div>
+      <div class="cell medium-3 text-center">
+        patron
+      </div>
+      <div class="cell medium-3 text-center">
+        patron
+      </div>
     </div>
   </div>
 </div>
 
-<div class="content testimonials" style="background-image: url('');">
+<div class="content">
   <div class="grid-container">
-    <div class="grid-x">
-
-      <div class="cell large-8 large-offset-2 text-center">
-        <h3>WANT US TO CATER FOR YOU?</h3>
-        <a href="/contact" class="button trans">Get your free quote today</a>
+    <div class="grid-x align-middle">
+      <div class="cell large-6 grid-x">
+        <div class="cell large-10">
+          <h2>What else<br /><strong>do we offer?</strong></h2>
+          <p><%= content(:text).try(:html_safe) %></p>
+          <a href="/course" class="button">View our course</a>
+        </div>
       </div>
-
+      <div class="cell large-6 grid-y">
+        <div class="cell large-6 inner-banner offer grid-x align-center" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
+          <div class="cell large-9 text-right">
+            <h4>Part-time<br /><strong>theatre school</strong></h4>
+          </div>
+        </div>
+        <div class="cell large-6 inner-banner offer grid-x align-center" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
+          <div class="cell large-9 text-right">
+            <h4>Theatrical<br /><strong>agency</strong></h4>
+          </div>
+        </div>
+        <div class="cell large-6 inner-banner offer grid-x align-center" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
+          <div class="cell large-9 text-right">
+            <h4>Featured<br /><strong>shows</strong></h4>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
