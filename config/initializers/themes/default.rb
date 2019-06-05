@@ -23,7 +23,7 @@
   }, {
     name: 'show',
     title: 'Default',
-    page_parts: ['banner_title', 'banner', 'text', 'image']
+    page_parts: ['text', 'image']
   }, {
     name: 'about',
     title: 'About',

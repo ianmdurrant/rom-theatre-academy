@@ -7,7 +7,7 @@
     <div class="grid-x">
 
       <div class="cell large-6">
-        <%= content(:banner_title).try(:html_safe) %>
+        <h1><%= @page.title %></h1>
         <%= content(:text).try(:html_safe) %>
       </div>
       <div class="cell large-6">
