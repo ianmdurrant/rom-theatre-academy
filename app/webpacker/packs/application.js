@@ -29,6 +29,9 @@ import 'images/istd.png';
 import 'images/pat.png';
 import 'images/new-era.png';
 import 'images/accreditations.png';
+import 'images/dance.jpg';
+import 'images/sing.jpg';
+import 'images/act.jpg';
 
 
 Rails.start();
