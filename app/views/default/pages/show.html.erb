@@ -5,17 +5,15 @@
 <div class="content" style="padding-top: 180px;">
   <div class="grid-container">
     <div class="grid-x">
-      <div class="cell large-2">
-        <div class="pagemarker">
-          01
-        </div>
-      </div>
+
       <div class="cell large-6">
         <%= content(:banner_title).try(:html_safe) %>
         <%= content(:text).try(:html_safe) %>
       </div>
-      <div class="cell large-2">
-
+      <div class="cell large-6">
+        <% if content(:image).present? %>
+          <%= image_tag main_app.url_for(content(:image).variant(resize: "1200x800")) %>
+        <% end %>
       </div>
     </div>
   </div>
