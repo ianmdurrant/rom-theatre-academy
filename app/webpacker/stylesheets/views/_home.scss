@@ -154,6 +154,10 @@ body {
 
   img {
   padding: 0 2rem;
+
+  @include breakpoint (medium down) {
+    padding: 0 1rem;
+    }
   }
 }
 
@@ -173,6 +177,10 @@ body {
       margin-bottom: 1rem;
       padding-top: 100%;
       width: 100%;
+
+      @include breakpoint (small down) {
+        margin: 0 1rem 1rem 0;
+        }
     }
 
     .patron-name {

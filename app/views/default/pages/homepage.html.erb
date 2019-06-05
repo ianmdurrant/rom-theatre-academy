@@ -5,10 +5,10 @@
 <div class="banner" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
   <div class="banner__content grid-container">
       <div class="grid-x">
-        <div class="cell medium-4 banner-logo">
+        <div class="cell small-4 banner-logo">
           <%= link_to (image_pack_tag 'logo-full.svg'), '/about', :class => 'logoimage' %>
         </div>
-        <div class="cell medium-8 text-right">
+        <div class="cell small-8 text-right">
           <%= content(:banner_title).try(:html_safe) %>
         </div>
       </div>
@@ -77,13 +77,13 @@
         <div class="cell medium-6 accreditation">
           <p><%= content(:accred_text).try(:html_safe) %></p>
         </div>
-        <div class="cell small-2 accreditation text-center">
+        <div class="cell small-4 medium-2 accreditation text-center">
           <%= link_to (image_pack_tag 'new-era.png'), '#' %>
         </div>
-        <div class="cell small-2 accreditation text-center">
+        <div class="cell small-4 medium-2 accreditation text-center">
           <%= link_to (image_pack_tag 'pat.png'), '#' %>
         </div>
-        <div class="cell small-2 accreditation text-center">
+        <div class="cell small-4 medium-2 accreditation text-center">
           <%= link_to (image_pack_tag 'istd.png'), '#' %>
         </div>
       </div>
@@ -99,8 +99,8 @@
       </div>
 
       <% @page.content(:patrons).structure_items.sorted_by_structure.each do |patrons| %>
-        <div class="cell medium-3 patron grid-x">
-          <div class="cell medium-6">
+        <div class="cell medium-3 patron grid-x grid-padding-x">
+          <div class="cell small-6">
             <div class="patron-picture" style="background-image: url('<%= main_app.url_for(patrons.content(:picture).variant(resize: "600x600")) %>');">&nbsp;</div>
           </div>
           <h4 class="patron-name cell medium-12"><%= patrons.content(:name) %></h4>
