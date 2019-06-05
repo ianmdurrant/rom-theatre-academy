@@ -149,7 +149,58 @@ body {
   }
 }
 
-.accreditation,
-.patron {
+.accreditation {
   padding-top: 2rem;
+
+  img {
+  padding: 0 2rem;
+  }
+}
+
+.content.patrons {
+  padding-top: 2rem;
+  padding-bottom: 0;
+
+  .patron {
+
+    .patron-picture {
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 100%;
+      display: block;
+      height: 0;
+      margin-bottom: 1rem;
+      padding-top: 100%;
+      width: 100%;
+    }
+
+    .patron-name {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .patron-quote {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+a.right-arrow {
+  background-color: $medium-gray;
+  border-radius: 2rem;
+  display: inline-block;
+  height: 3rem;
+  margin-top: 0.5rem;
+  width: 3rem;
+
+  img {
+    padding: 1rem;
+  }
+}
+
+.joinus {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

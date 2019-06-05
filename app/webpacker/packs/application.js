@@ -25,6 +25,10 @@ import 'images/banner-logo.svg';
 import 'images/logo.svg';
 import 'images/arrow-right.svg';
 import 'images/arrow-left.svg';
+import 'images/istd.png';
+import 'images/pat.png';
+import 'images/new-era.png';
+import 'images/accreditations.png';
 
 
 Rails.start();

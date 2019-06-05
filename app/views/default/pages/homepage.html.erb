@@ -73,40 +73,41 @@
         </div>
 
       </div>
-      <div class="cell medium-6 accreditation">
-        Accreditation text
-      </div>
-      <div class="cell medium-2 accreditation text-center">
-        logo
-      </div>
-      <div class="cell medium-2 accreditation text-center">
-        logo
-      </div>
-      <div class="cell medium-2 accreditation text-center">
-        logo
+      <div class="grid-x grid-padding-x align-middle">
+        <div class="cell medium-6 accreditation">
+          <p><%= content(:accred_text).try(:html_safe) %></p>
+        </div>
+        <div class="cell medium-2 accreditation text-center">
+          <%= link_to (image_pack_tag 'new-era.png'), '#' %>
+        </div>
+        <div class="cell medium-2 accreditation text-center">
+          <%= link_to (image_pack_tag 'pat.png'), '#' %>
+        </div>
+        <div class="cell medium-2 accreditation text-center">
+          <%= link_to (image_pack_tag 'istd.png'), '#' %>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="content">
+<div class="content patrons">
   <div class="grid-container">
     <div class="grid-x">
       <div class="cell large-12">
         <h3>Our inspiring<br /><strong>patrons</strong></h3>
       </div>
-      <div class="cell medium-3">
-        patron
-      </div>
-      <div class="cell medium-3">
-        patron
-      </div>
-      <div class="cell medium-3">
-        patron
-      </div>
-      <div class="cell medium-3">
-        patron
-      </div>
+
+      <% @page.content(:patrons).structure_items.sorted_by_structure.each do |patrons| %>
+        <div class="cell medium-3 patron grid-x">
+          <div class="medium-6">
+            <div class="patron-picture" style="background-image: url('<%= main_app.url_for(patrons.content(:picture).variant(resize: "600x600")) %>');">&nbsp;</div>
+          </div>
+          <h4 class="patron-name medium-12"><%= patrons.content(:name) %></h4>
+          <div class="patron-quote medium-12"><%= patrons.content(:quote).try(:html_safe) %><br /></div>
+        </div>
+      <% end %>
+
     </div>
   </div>
 </div>
@@ -117,26 +118,46 @@
       <div class="cell large-6 grid-x">
         <div class="cell large-10">
           <h2>What else<br /><strong>do we offer?</strong></h2>
-          <p><%= content(:text).try(:html_safe) %></p>
-          <a href="/course" class="button">View our course</a>
+          <p><%= content(:offer_text).try(:html_safe) %></p>
         </div>
       </div>
       <div class="cell large-6 grid-y">
-        <div class="cell large-6 inner-banner offer grid-x align-center" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
-          <div class="cell large-9 text-right">
+        <div class="cell large-6 inner-banner offer grid-x align-center-middle" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
+          <div class="cell small-6 text-left">
             <h4>Part-time<br /><strong>theatre school</strong></h4>
           </div>
+          <div class="cell small-3 text-right">
+            <%= link_to (image_pack_tag 'media/images/arrow-right.svg'), '/part-time-theatre-school', class: "right-arrow" %>
+          </div>
         </div>
         <div class="cell large-6 inner-banner offer grid-x align-center" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
-          <div class="cell large-9 text-right">
+          <div class="cell small-6 text-left">
             <h4>Theatrical<br /><strong>agency</strong></h4>
           </div>
-        </div>
-        <div class="cell large-6 inner-banner offer grid-x align-center" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
-          <div class="cell large-9 text-right">
-            <h4>Featured<br /><strong>shows</strong></h4>
+          <div class="cell small-3 text-right">
+            <%= link_to (image_pack_tag 'media/images/arrow-right.svg'), '/theatrical-agency', class: "right-arrow" %>
           </div>
         </div>
+        <div class="cell large-6 inner-banner offer grid-x align-center" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
+          <div class="cell small-6 text-left">
+            <h4>Featured<br /><strong>shows</strong></h4>
+          </div>
+          <div class="cell small-3 text-right">
+            <%= link_to (image_pack_tag 'media/images/arrow-right.svg'), '/featured-shows', class: "right-arrow" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content fullwidth joinus" style="background-image: url(<%= main_app.url_for(@page.content(:joinus_banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
+  <div class="grid-container">
+    <div class="grid-x align-center">
+      <div class="cell large-4 large-offset-7 text-right">
+        <h3>Interested in<br /><strong>Joining us?</strong></h3>
+        <p><%= content(:joinus_text).try(:html_safe) %></p>
+        <a href="/contact" class="button">Apply now</a>
       </div>
     </div>
   </div>

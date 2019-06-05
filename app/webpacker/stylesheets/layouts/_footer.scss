@@ -56,6 +56,10 @@
     margin-bottom: 1rem;
   }
 
+  p.copyright {
+    margin-bottom: 0;
+  }
+
   a {
     color: $white;
     transition: color 0.25s ease-out;
