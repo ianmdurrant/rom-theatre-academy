@@ -100,7 +100,7 @@
 
       <% @page.content(:patrons).structure_items.sorted_by_structure.each do |patrons| %>
         <div class="cell medium-3 patron grid-x">
-          <div class="medium-6">
+          <div class="cell medium-6">
             <div class="patron-picture" style="background-image: url('<%= main_app.url_for(patrons.content(:picture).variant(resize: "600x600")) %>');">&nbsp;</div>
           </div>
           <h4 class="patron-name medium-12"><%= patrons.content(:name) %></h4>
