@@ -1,0 +1,103 @@
+<%= content_for :page_title, @page.seo_title %>
+<%= content_for :page_description, @page.description %>
+<%= content_for :body_classes, "academy-page" %>
+
+<div class="banner" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
+  <div class="banner__heading grid-container">
+      <div class="grid-y">
+        <div class="cell small-8">
+          <h1 class="page-title"><%= @page.title %></h1>
+        </div>
+      </div>
+  </div>
+  <div class="banner__content grid-container">
+      <div class="grid-y">
+        <div class="cell small-8">
+          <%= content(:banner_title).try(:html_safe) %>
+        </div>
+        <div class="cell small-8">
+          <%= content(:banner_text).try(:html_safe) %>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="content fullwidth grid-x banner2 align-bottom" style="background-image: url(<%= main_app.url_for(@page.content(:banner2).variant(resize: "1280x720")) if content(:banner).present? %>);">
+  <div class="grid-container cell">
+    <div class="grid-x">
+      <div class="cell large-6">
+        <p><%= content(:banner2_title).try(:html_safe) %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content nopadding">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="cell large-6">
+        <%= content(:text).try(:html_safe) %>
+      </div>
+      <div class="cell large-6 text-center">
+        <h4>Want to find<br /><strong>out more?</strong></h4>
+        <a href="/contact" class="button">Apply now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content testimonials">
+  <div class="grid-container">
+    <div class="grid-x">
+      <div class="cell large-12">
+        <h3>Our<br /><strong>facilities</strong></h3>
+      </div>
+      <div class="cell large-12 text-center">
+        <div id="testimonialCarousel" class="owl-carousel testimonial-carousel">
+
+          <% @page.content(:facilities).structure_items.sorted_by_structure.each do |facilities| %>
+            <div class="facility">
+              <div class="facilities-banner" style="background-image: url('<%= main_app.url_for(facilities.content(:picture).variant(resize: "1200x600")) %>');">
+                &nbsp;
+              </div>
+              <div class="facilities-content grid-x align-center">
+                <h4 class="facilities-title cell medium-8"><%= facilities.content(:title) %></h4>
+                <div class="facilities-text cell medium-8"><%= facilities.content(:text).try(:html_safe) %><br /></div>
+              </div>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="grid-container">
+    <div class="grid-x openday">
+      <div class="cell large-6 grid-x">
+        <div class="cell large-10 openday-text align-middle">
+          <%= content(:openday_text).try(:html_safe) %>
+          <br />
+          <a href="/contact" class="button">Sign up today</a>
+        </div>
+      </div>
+      <div class="cell large-6 openday-image" style="background-image: url(<%= main_app.url_for(@page.content(:openday_banner).variant(resize: "1280x720")) if content(:joinus_banner).present? %>);">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content fullwidth joinus" style="background-image: url(<%= main_app.url_for(@page.content(:joinus_banner).variant(resize: "1280x720")) if content(:joinus_banner).present? %>);">
+  <div class="grid-container">
+    <div class="grid-x align-center">
+      <div class="cell large-6 text-center">
+        <h3>Interested in<br /><strong>Joining us?</strong></h3>
+        <p><%= content(:joinus_text).try(:html_safe) %></p>
+        <a href="/contact" class="button">Apply now</a>
+      </div>
+    </div>
+  </div>
+</div>

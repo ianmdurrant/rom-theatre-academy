@@ -6,14 +6,20 @@
     { name: 'text', title: 'Text', partable_type: 'Spina::Text' },
     { name: 'accred_text', title: 'Accreditations Text', partable_type: 'Spina::Text' },
     { name: 'offer_text', title: 'Offer Text', partable_type: 'Spina::Text' },
-    { name: 'joinus_text', title: 'Join Us Text', partable_type: 'Spina::Text' },
     { name: 'image', title: 'Image', partable_type: 'Spina::Image' },
     { name: 'image_collection', title: 'Image Collection', partable_type: 'Spina::ImageCollection' },
     { name: 'banner', title: 'Banner Image', partable_type: 'Spina::Image' },
-    { name: 'joinus_banner', title: 'Join Us Banner Image', partable_type: 'Spina::Image' },
     { name: 'banner_title', title: 'Banner Title', partable_type: 'Spina::Text' },
+    { name: 'banner_text', title: 'Banner Text', partable_type: 'Spina::Text' },
+    { name: 'banner2', title: 'Banner 2 Image', partable_type: 'Spina::Image' },
+    { name: 'banner2_title', title: 'Banner 2 Title', partable_type: 'Spina::Text' },
+    { name: 'openday_banner', title: 'Open Day Image', partable_type: 'Spina::Image' },
+    { name: 'openday_text', title: 'Open Day Text', partable_type: 'Spina::Text' },
+    { name: 'joinus_banner', title: 'Join Us Banner Image', partable_type: 'Spina::Image' },
+    { name: 'joinus_text', title: 'Join Us Text', partable_type: 'Spina::Text' },
     { name: 'testimonials', title: 'Testimonials', partable_type: 'Spina::Structure' },
-    { name: 'patrons', title: 'Patrons', partable_type: 'Spina::Structure' }
+    { name: 'patrons', title: 'Patrons', partable_type: 'Spina::Structure' },
+    { name: 'facilities', title: 'Facilities', partable_type: 'Spina::Structure' }
   ]
 
   theme.view_templates = [{
@@ -29,13 +35,9 @@
     title: 'About',
     page_parts: ['banner', 'banner_title', 'text', 'testimonials']
   }, {
-    name: 'services',
-    title: 'Services',
-    page_parts: ['banner', 'banner_title', 'text']
-  }, {
-    name: 'services_item',
-    title: 'Services Item',
-    page_parts: ['banner_title', 'banner', 'text', 'text2', 'text3', 'menus']
+    name: 'academy',
+    title: 'Academy',
+    page_parts: ['banner', 'banner_title', 'banner_text', 'banner2', 'banner2_title', 'text', 'facilities', 'openday_text', 'openday_banner', 'joinus_text', 'joinus_banner']
   }, {
     name: 'contact',
     title: 'Contact',
@@ -79,6 +81,21 @@
     }, {
       name:           'quote',
       title:          'Quote',
+      partable_type:  'Spina::Text'
+    }, {
+      name:           'picture',
+      title:          'Picture',
+      partable_type:  'Spina::Image'
+    }]
+  },{
+    name: 'facilities',
+    structure_parts: [{
+      name:           'title',
+      title:          'Title',
+      partable_type:  'Spina::Line'
+    }, {
+      name:           'text',
+      title:          'Text',
       partable_type:  'Spina::Text'
     }, {
       name:           'picture',

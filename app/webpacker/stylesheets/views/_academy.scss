@@ -1,0 +1,70 @@
+.academy-page {
+
+  .banner__heading {
+    position: relative;
+    top: 8rem;
+    z-index: 10;
+
+    .page-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+  }
+
+  .banner__content {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  .banner2 {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 4rem 0 2rem;
+    min-height: 480px;
+    padding: 0 !important;
+    position: relative;
+  }
+
+  .facility {
+
+    .facilities-banner {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: block;
+      height: 0;
+      padding-top: 25% !important;
+    }
+
+    .facilities-content {
+
+      h4 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin: 1.5rem 0 0.5rem;
+      }
+    }
+  }
+
+  .owl-nav {
+    top: unset;
+    bottom: 2rem;
+  }
+
+  .openday {
+    position: relative;
+
+    .openday-text {
+      @include vertical-center;
+
+    }
+
+    .openday-image {
+      min-height: 480px;
+    }
+  }
+}
