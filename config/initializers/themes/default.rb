@@ -20,8 +20,11 @@
     { name: 'testimonials', title: 'Testimonials', partable_type: 'Spina::Structure' },
     { name: 'course_detail', title: 'Course Details', partable_type: 'Spina::Structure' },
     { name: 'entry_text', title: 'Entry Requirements Text', partable_type: 'Spina::Text' },
-    { name: 'fees_text', title: 'Course Fees Text', partable_type: 'Spina::Text' },
+    { name: 'fees_text', title: 'Fees Text', partable_type: 'Spina::Text' },
+    { name: 'rates', title: 'Rates', partable_type: 'Spina::Text' },
+    { name: 'price', title: 'Price', partable_type: 'Spina::Line' },
     { name: 'scholarship_text', title: 'Scholarship Text', partable_type: 'Spina::Text' },
+    { name: 'clients_text', title: 'Clients Text', partable_type: 'Spina::Text' },
     { name: 'patrons', title: 'Patrons', partable_type: 'Spina::Structure' },
     { name: 'facilities', title: 'Facilities', partable_type: 'Spina::Structure' }
   ]
@@ -46,6 +49,10 @@
     name: 'theatreschool',
     title: 'Theatre School',
     page_parts: ['banner', 'banner_title', 'banner_text', 'banner2', 'banner2_title', 'text', 'facilities', 'openday_text', 'openday_banner', 'joinus_text', 'joinus_banner']
+  }, {
+    name: 'agency',
+    title: 'Agency',
+    page_parts: ['banner', 'banner_title', 'banner_text', 'text', 'image', 'fees_text', 'rates', 'price', 'clients_text', 'joinus_text', 'joinus_banner']
   }, {
     name: 'course',
     title: 'Course',
