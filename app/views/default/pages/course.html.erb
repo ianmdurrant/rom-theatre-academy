@@ -1,0 +1,117 @@
+<%= content_for :page_title, @page.seo_title %>
+<%= content_for :page_description, @page.description %>
+<%= content_for :body_classes, "course-page" %>
+
+<div class="banner" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
+  <div class="banner__heading grid-container">
+      <div class="grid-y">
+        <div class="cell small-8">
+          <h1 class="page-title"><%= @page.title %></h1>
+        </div>
+      </div>
+  </div>
+  <div class="banner__content grid-container">
+      <div class="grid-y">
+        <div class="cell small-8">
+          <%= content(:banner_title).try(:html_safe) %>
+        </div>
+        <div class="cell small-8">
+          <%= content(:banner_text).try(:html_safe) %>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="content testimonials">
+  <div class="grid-container">
+    <div class="grid-x">
+      <div class="cell large-12">
+        <h3>Course<br /><strong>outline</strong></h3>
+      </div>
+      <div class="cell large-12 text-center">
+        <div id="testimonialCarousel" class="owl-carousel testimonial-carousel">
+
+          <% @page.content(:course_detail).structure_items.sorted_by_structure.each do |course_detail| %>
+            <div class="facility">
+              <div class="facilities-banner" style="background-image: url('<%= main_app.url_for(course_detail.content(:picture).variant(resize: "1200x600")) %>');">
+                <div class="grid-container grid-x align-center">
+                  <h4 class="cell large-10"><%= course_detail.content(:title) %></h4>
+                </div>
+              </div>
+              <div class="grid-container">
+                <div class="facilities-content grid-x align-center">
+                  <div class="facilities-title cell medium-5 text-left">
+                    <%= course_detail.content(:text).try(:html_safe) %>
+                  </div>
+                  <div class="cell large-5 text-center">
+                    <h4>Want to find<br /><strong>out more?</strong></h4>
+                    <a href="/contact" class="button">Apply now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content whitebg fees">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="cell large-6">
+        <h4>Entry requirements</h4>
+        <%= content(:entry_text).try(:html_safe) %>
+      </div>
+      <div class="cell large-6">
+        <h4>Course fees</h4>
+        <%= content(:fees_text).try(:html_safe) %>
+      </div>
+    </div>
+    <div class="grid-x grid-padding-x align-middle" style="padding-top: 2rem;">
+      <div class="cell large-12">
+        <h4>Scholarships</h4>
+      </div>
+      <div class="cell large-6">
+        <%= content(:scholarship_text).try(:html_safe) %>
+      </div>
+      <div class="cell medium-3 text-center">
+        <a href="/contact" class="button black">Kerry Ellis<br />Scholarship Form</a>
+      </div>
+      <div class="cell medium-3 text-center">
+        <a href="/contact" class="button black">Russell Tovey<br />Scholarship Form</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content testimonials">
+  <div class="grid-container">
+    <div class="section-header"><h3>Our students<br /><strong>love our course</strong></<h3></div>
+    <div class="grid-x grid-padding-x align-center-middle">
+          <% @page.content(:testimonials).structure_items.sorted_by_structure.first(3).each do |testimonials| %>
+            <div class="cell medium-4 text-center">
+              <blockquote class="quote">
+                <cite class="author"><%= testimonials.content(:author) %></cite>
+                <cite class="location"><%= testimonials.content(:location) %></cite>
+                <%= testimonials.content(:testimonial).try(:html_safe) %>
+              </blockquote>
+            </div>
+          <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="content fullwidth joinus" style="background-image: url(<%= main_app.url_for(@page.content(:joinus_banner).variant(resize: "1280x720")) if content(:joinus_banner).present? %>);">
+  <div class="grid-container">
+    <div class="grid-x align-center">
+      <div class="cell large-6 text-center">
+        <h3>Interested in<br /><strong>Joining us?</strong></h3>
+        <p><%= content(:joinus_text).try(:html_safe) %></p>
+        <a href="/contact" class="button">Apply now</a>
+      </div>
+    </div>
+  </div>
+</div>

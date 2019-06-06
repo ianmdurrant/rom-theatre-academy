@@ -18,6 +18,10 @@
     { name: 'joinus_banner', title: 'Join Us Banner Image', partable_type: 'Spina::Image' },
     { name: 'joinus_text', title: 'Join Us Text', partable_type: 'Spina::Text' },
     { name: 'testimonials', title: 'Testimonials', partable_type: 'Spina::Structure' },
+    { name: 'course_detail', title: 'Course Details', partable_type: 'Spina::Structure' },
+    { name: 'entry_text', title: 'Entry Requirements Text', partable_type: 'Spina::Text' },
+    { name: 'fees_text', title: 'Course Fees Text', partable_type: 'Spina::Text' },
+    { name: 'scholarship_text', title: 'Scholarship Text', partable_type: 'Spina::Text' },
     { name: 'patrons', title: 'Patrons', partable_type: 'Spina::Structure' },
     { name: 'facilities', title: 'Facilities', partable_type: 'Spina::Structure' }
   ]
@@ -37,7 +41,11 @@
   }, {
     name: 'academy',
     title: 'Academy',
-    page_parts: ['banner', 'banner_title', 'banner_text', 'banner2', 'banner2_title', 'text', 'facilities', 'openday_text', 'openday_banner', 'joinus_text', 'joinus_banner']
+    page_parts: ['banner', 'banner_title', 'banner_text', 'banner2', 'banner2_title', 'text', 'facilities', 'testimonials', 'joinus_text', 'joinus_banner']
+  }, {
+    name: 'course',
+    title: 'Course',
+    page_parts: ['banner', 'banner_title', 'banner_text', 'text', 'course_detail', 'testimonials', 'entry_text', 'fees_text', 'scholarship_text', 'joinus_text', 'joinus_banner']
   }, {
     name: 'contact',
     title: 'Contact',
@@ -68,6 +76,10 @@
       title:          'Author',
       partable_type:  'Spina::Line'
     }, {
+      name:           'location',
+      title:          'Location',
+      partable_type:  'Spina::Line'
+    }, {
       name:           'testimonial',
       title:          'Testimonial',
       partable_type:  'Spina::Text'
@@ -89,6 +101,21 @@
     }]
   },{
     name: 'facilities',
+    structure_parts: [{
+      name:           'title',
+      title:          'Title',
+      partable_type:  'Spina::Line'
+    }, {
+      name:           'text',
+      title:          'Text',
+      partable_type:  'Spina::Text'
+    }, {
+      name:           'picture',
+      title:          'Picture',
+      partable_type:  'Spina::Image'
+    }]
+  },{
+    name: 'course_detail',
     structure_parts: [{
       name:           'title',
       title:          'Title',
