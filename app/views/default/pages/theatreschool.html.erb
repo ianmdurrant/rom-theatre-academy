@@ -1,6 +1,6 @@
 <%= content_for :page_title, @page.seo_title %>
 <%= content_for :page_description, @page.description %>
-<%= content_for :body_classes, "academy-page" %>
+<%= content_for :body_classes, "theatreschool-page" %>
 
 <div class="banner" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
   <div class="banner__heading grid-container">
@@ -50,7 +50,7 @@
   <div class="grid-container">
     <div class="grid-x">
       <div class="cell large-12">
-        <h3>Our<br /><strong>facilities</strong></h3>
+        <h3>Activities &amp;<br /><strong>Sessions</strong></h3>
       </div>
       <div class="cell large-12 text-center">
         <div id="testimonialCarousel" class="owl-carousel testimonial-carousel">
@@ -80,10 +80,10 @@
         <div class="cell large-5 openday-text align-middle">
           <%= content(:openday_text).try(:html_safe) %>
           <br />
-          <a href="/contact" class="button">Sign up today</a>
+          <a href="/contact" class="button">Book a taster day</a>
         </div>
       </div>
-      <div class="cell large-6 openday-image" style="background-image: url(<%= main_app.url_for(@page.content(:openday_banner).variant(resize: "1280x720")) if content(:openday_banner).present? %>);">
+      <div class="cell large-6 openday-image" style="background-image: url(<%= main_app.url_for(@page.content(:openday_banner).variant(resize: "1280x720")) if content(:joinus_banner).present? %>);">
 
       </div>
     </div>

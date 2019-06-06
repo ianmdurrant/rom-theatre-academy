@@ -41,7 +41,11 @@
   }, {
     name: 'academy',
     title: 'Academy',
-    page_parts: ['banner', 'banner_title', 'banner_text', 'banner2', 'banner2_title', 'text', 'facilities', 'testimonials', 'joinus_text', 'joinus_banner']
+    page_parts: ['banner', 'banner_title', 'banner_text', 'banner2', 'banner2_title', 'text', 'facilities', 'testimonials', 'openday_text', 'openday_banner', 'joinus_text', 'joinus_banner']
+  }, {
+    name: 'theatreschool',
+    title: 'Theatre School',
+    page_parts: ['banner', 'banner_title', 'banner_text', 'banner2', 'banner2_title', 'text', 'facilities', 'testimonials', 'openday_text', 'openday_banner', 'joinus_text', 'joinus_banner']
   }, {
     name: 'course',
     title: 'Course',
