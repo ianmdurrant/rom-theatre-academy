@@ -24,13 +24,11 @@
 
 <div class="content">
   <div class="grid-container">
-    <div class="grid-x openday">
-      <div class="cell large-6 grid-x">
-        <div class="cell large-5 openday-text align-middle">
-          <%= content(:text).try(:html_safe) %>
-        </div>
+    <div class="grid-x openday align-middle">
+      <div class="cell medium-5">
+        <%= content(:text).try(:html_safe) %>
       </div>
-      <div class="cell large-6 openday-image" style="background-image: url(<%= main_app.url_for(@page.content(:image).variant(resize: "1280x720")) if content(:image).present? %>);">
+      <div class="cell large-6 medium-offset-1 openday-image" style="background-image: url(<%= main_app.url_for(@page.content(:image).variant(resize: "1280x720")) if content(:image).present? %>);">
 
       </div>
     </div>
