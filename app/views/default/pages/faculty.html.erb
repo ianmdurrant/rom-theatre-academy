@@ -1,0 +1,126 @@
+<%= content_for :page_title, @page.seo_title %>
+<%= content_for :page_description, @page.description %>
+<%= content_for :body_classes, "faculty-page" %>
+
+<div class="banner" style="background-image: url(<%= main_app.url_for(@page.content(:banner).variant(resize: "1280x720")) if content(:banner).present? %>);">
+  <div class="banner__heading grid-container">
+      <div class="grid-y">
+        <div class="cell small-8">
+          <h1 class="page-title"><%= @page.title %></h1>
+        </div>
+      </div>
+  </div>
+  <div class="banner__content grid-container">
+      <div class="grid-y">
+        <div class="cell small-8">
+          <%= content(:banner_title).try(:html_safe) %>
+        </div>
+        <div class="cell small-8">
+          <%= content(:banner_text).try(:html_safe) %>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="content patrons" style="padding-bottom: 3rem;">
+  <div class="grid-container">
+    <ul class="accordion" data-accordion>
+      <li class="accordion-item is-active" data-accordion-item>
+        <a href="#" class="accordion-title">Course<br />Directors</a>
+        <div class="accordion-content" data-tab-content>
+          <div class="grid-x grid-padding-x small-up-2 medium-up-4 large-up-6 align-spaced">
+            <% @page.content(:directors).structure_items.sorted_by_structure.each do |directors| %>
+              <div class="cell medium-2 patron text-center">
+                <div class="patron-picture" style="background-image: url('<%= main_app.url_for(directors.content(:picture).variant(resize: "600x600")) %>');">&nbsp;</div>
+                <h4><%= directors.content(:name) %></h4>
+                <h5><%= directors.content(:position) %></h5>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </li>
+      <li class="accordion-item" data-accordion-item>
+        <a href="#" class="accordion-title">Music Theatre<br />Tutors</a>
+        <div class="accordion-content" data-tab-content>
+          <div class="grid-x grid-padding-x small-up-2 medium-up-4 large-up-6 align-spaced">
+            <% @page.content(:music_tutors).structure_items.sorted_by_structure.each do |music_tutors| %>
+              <div class="cell medium-2 patron text-center">
+                <div class="patron-picture" style="background-image: url('<%= main_app.url_for(music_tutors.content(:picture).variant(resize: "600x600")) %>');">&nbsp;</div>
+                <h4><%= music_tutors.content(:name) %></h4>
+                <h5><%= music_tutors.content(:position) %></h5>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </li>
+      <li class="accordion-item" data-accordion-item>
+        <a href="#" class="accordion-title">Technical Dance<br />Tutors</a>
+        <div class="accordion-content" data-tab-content>
+          <div class="grid-x grid-padding-x small-up-2 medium-up-4 large-up-6 align-spaced">
+            <% @page.content(:dance_tutors).structure_items.sorted_by_structure.each do |dance_tutors| %>
+              <div class="cell medium-2 patron text-center">
+                <div class="patron-picture" style="background-image: url('<%= main_app.url_for(dance_tutors.content(:picture).variant(resize: "600x600")) %>');">&nbsp;</div>
+                <h4><%= dance_tutors.content(:name) %></h4>
+                <h5><%= dance_tutors.content(:position) %></h5>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </li>
+      <li class="accordion-item" data-accordion-item>
+        <a href="#" class="accordion-title">Vocal &amp; Acting<br />Coaches</a>
+        <div class="accordion-content" data-tab-content>
+          <div class="grid-x grid-padding-x small-up-2 medium-up-4 large-up-6 align-spaced">
+            <% @page.content(:coaches).structure_items.sorted_by_structure.each do |coaches| %>
+              <div class="cell medium-2 patron text-center">
+                <div class="patron-picture" style="background-image: url('<%= main_app.url_for(coaches.content(:picture).variant(resize: "600x600")) %>');">&nbsp;</div>
+                <h4><%= coaches.content(:name) %></h4>
+                <h5><%= coaches.content(:position) %></h5>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </li>
+      <li class="accordion-item" data-accordion-item>
+        <a href="#" class="accordion-title">Guest<br />Tutors</a>
+        <div class="accordion-content" data-tab-content>
+          <div class="grid-x grid-padding-x small-up-2 medium-up-4 large-up-6 align-spaced">
+            <% @page.content(:guest_tutors).structure_items.sorted_by_structure.each do |guest_tutors| %>
+              <div class="cell medium-2 patron text-center">
+                <div class="patron-picture" style="background-image: url('<%= main_app.url_for(guest_tutors.content(:picture).variant(resize: "600x600")) %>');">&nbsp;</div>
+                <h4><%= guest_tutors.content(:name) %></h4>
+                <h5><%= guest_tutors.content(:position) %></h5>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </li>
+      <li class="accordion-item" data-accordion-item>
+        <a href="#" class="accordion-title">Administration, Health<br />&amp; Welfare</a>
+        <div class="accordion-content" data-tab-content>
+          <div class="grid-x grid-padding-x small-up-2 medium-up-4 large-up-6 align-spaced">
+            <% @page.content(:admin).structure_items.sorted_by_structure.each do |admin| %>
+              <div class="cell medium-2 patron text-center">
+                <div class="patron-picture" style="background-image: url('<%= main_app.url_for(admin.content(:picture).variant(resize: "600x600")) %>');">&nbsp;</div>
+                <h4><%= admin.content(:name) %></h4>
+                <h5><%= admin.content(:position) %></h5>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="content fullwidth joinus" style="background-image: url(<%= main_app.url_for(@page.content(:joinus_banner).variant(resize: "1280x720")) if content(:joinus_banner).present? %>);">
+  <div class="grid-container">
+    <div class="grid-x align-center">
+      <div class="cell large-6 text-center">
+        <h3>Interested in<br /><strong>Joining us?</strong></h3>
+        <p><%= content(:joinus_text).try(:html_safe) %></p>
+        <a href="/contact" class="button">Apply now</a>
+      </div>
+    </div>
+  </div>
+</div>

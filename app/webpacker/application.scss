@@ -9,6 +9,7 @@
 @include foundation-flex-classes;
 @include foundation-typography;
 @include foundation-forms;
+@include foundation-accordion;
 @include foundation-button;
 @include foundation-callout;
 @include foundation-card;
@@ -33,7 +34,7 @@
 @import "./stylesheets/views/agency";
 @import "./stylesheets/views/course";
 @import "./stylesheets/views/theatreschool";
-@import "./stylesheets/views/about";
+@import "./stylesheets/views/faculty";
 @import "./stylesheets/views/contact";
 
 small.error {

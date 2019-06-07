@@ -26,7 +26,13 @@
     { name: 'scholarship_text', title: 'Scholarship Text', partable_type: 'Spina::Text' },
     { name: 'clients_text', title: 'Clients Text', partable_type: 'Spina::Text' },
     { name: 'patrons', title: 'Patrons', partable_type: 'Spina::Structure' },
-    { name: 'facilities', title: 'Facilities', partable_type: 'Spina::Structure' }
+    { name: 'facilities', title: 'Facilities', partable_type: 'Spina::Structure' },
+    { name: 'directors', title: 'Course Directors', partable_type: 'Spina::Structure' },
+    { name: 'music_tutors', title: 'Music Theatre Tutors', partable_type: 'Spina::Structure' },
+    { name: 'dance_tutors', title: 'Dance Tutors', partable_type: 'Spina::Structure' },
+    { name: 'coaches', title: 'Coaches', partable_type: 'Spina::Structure' },
+    { name: 'guest_tutors', title: 'Guest Tutors', partable_type: 'Spina::Structure' },
+    { name: 'admin', title: 'Admin & Other', partable_type: 'Spina::Structure' }
   ]
 
   theme.view_templates = [{
@@ -38,9 +44,9 @@
     title: 'Default',
     page_parts: ['text', 'image']
   }, {
-    name: 'about',
-    title: 'About',
-    page_parts: ['banner', 'banner_title', 'text', 'testimonials']
+    name: 'faculty',
+    title: 'Faculty',
+    page_parts: ['banner', 'banner_title', 'banner_text', 'directors', 'music_tutors', 'dance_tutors', 'coaches', 'guest_tutors', 'admin', 'joinus_text', 'joinus_banner']
   }, {
     name: 'academy',
     title: 'Academy',
@@ -135,6 +141,96 @@
       name:           'text',
       title:          'Text',
       partable_type:  'Spina::Text'
+    }, {
+      name:           'picture',
+      title:          'Picture',
+      partable_type:  'Spina::Image'
+    }]
+  },{
+    name: 'directors',
+    structure_parts: [{
+      name:           'name',
+      title:          'Name',
+      partable_type:  'Spina::Line'
+    }, {
+      name:           'position',
+      title:          'Position',
+      partable_type:  'Spina::Line'
+    }, {
+      name:           'picture',
+      title:          'Picture',
+      partable_type:  'Spina::Image'
+    }]
+  },{
+    name: 'music_tutors',
+    structure_parts: [{
+      name:           'name',
+      title:          'Name',
+      partable_type:  'Spina::Line'
+    }, {
+      name:           'position',
+      title:          'Position',
+      partable_type:  'Spina::Line'
+    }, {
+      name:           'picture',
+      title:          'Picture',
+      partable_type:  'Spina::Image'
+    }]
+  },{
+    name: 'dance_tutors',
+    structure_parts: [{
+      name:           'name',
+      title:          'Name',
+      partable_type:  'Spina::Line'
+    }, {
+      name:           'position',
+      title:          'Position',
+      partable_type:  'Spina::Line'
+    }, {
+      name:           'picture',
+      title:          'Picture',
+      partable_type:  'Spina::Image'
+    }]
+  },{
+    name: 'coaches',
+    structure_parts: [{
+      name:           'name',
+      title:          'Name',
+      partable_type:  'Spina::Line'
+    }, {
+      name:           'position',
+      title:          'Position',
+      partable_type:  'Spina::Line'
+    }, {
+      name:           'picture',
+      title:          'Picture',
+      partable_type:  'Spina::Image'
+    }]
+  },{
+    name: 'guest_tutors',
+    structure_parts: [{
+      name:           'name',
+      title:          'Name',
+      partable_type:  'Spina::Line'
+    }, {
+      name:           'position',
+      title:          'Position',
+      partable_type:  'Spina::Line'
+    }, {
+      name:           'picture',
+      title:          'Picture',
+      partable_type:  'Spina::Image'
+    }]
+  },{
+    name: 'admin',
+    structure_parts: [{
+      name:           'name',
+      title:          'Name',
+      partable_type:  'Spina::Line'
+    }, {
+      name:           'position',
+      title:          'Position',
+      partable_type:  'Spina::Line'
     }, {
       name:           'picture',
       title:          'Picture',

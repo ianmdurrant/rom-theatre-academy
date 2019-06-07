@@ -1,0 +1,81 @@
+.faculty-page {
+
+  .banner__heading {
+    position: relative;
+    top: 8rem;
+    z-index: 10;
+
+    .page-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+  }
+
+  .banner__content {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  ul.accordion {
+    background-color: $black;
+    list-style: none;
+
+    li {
+
+    }
+
+    li a {
+      border: none;
+      border-bottom: 1px solid $white;
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.25rem;
+      Margin-top: 2rem;
+      padding: 0.5rem 0 0.5rem 0;
+      text-transform: uppercase;
+    }
+
+    .accordion-title {
+
+      &:hover {
+        background-color: $black;
+        color: $medium-gray;
+      }
+
+      &:focus {
+        background-color: $black;
+        color: $white;
+      }
+
+      &::before {
+        margin-top: -0.75rem;
+      }
+    }
+
+    .accordion-content {
+      padding: 1rem 0;
+      border: none;
+      border-bottom: 0;
+      background-color: $black;
+
+      h4 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      h5 {
+        background-color: $white;
+        border-radius: 2rem;
+        color: $black;
+        font-size: 0.9rem;
+        font-weight: 500;
+        line-height: 1rem;
+        padding: 0.25rem 0.5rem;
+      }
+    }
+  }
+}
